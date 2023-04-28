@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface HotelService {
     public Hotel addHotel(Hotel hotel);
-    public Hotel getHotel(Hotel hotel)throws HotelException;
+    public Hotel getHotel(String hotelId)throws HotelException;
     public List<Hotel> getAllHotels()throws  HotelException;
     public Hotel updateHotel(Hotel hotel)throws  HotelException;
     public String DeleteHotel(String hotelId)throws  HotelException;

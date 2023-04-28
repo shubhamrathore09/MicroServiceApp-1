@@ -3,10 +3,12 @@ package com.masai.hotelServiceMicro.Service;
 import com.masai.hotelServiceMicro.Exception.HotelException;
 import com.masai.hotelServiceMicro.HotelRepo.HotelRepo;
 import com.masai.hotelServiceMicro.Model.Hotel;
+import net.bytebuddy.utility.RandomString;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class HotelServiceImpl implements HotelService{
@@ -16,13 +18,15 @@ public class HotelServiceImpl implements HotelService{
 
     @Override
     public Hotel addHotel(Hotel hotel) {
+        String hotelId= UUID.randomUUID().toString();
+        hotel.setHotelId(hotelId);
         return hotelRepo.save(hotel);
     }
 
     @Override
-    public Hotel getHotel(Hotel hotel) throws HotelException {
-//        return hotelRepo.findById(hotelId).orElseThrow(()->new HotelException("No hotel available by that id"));
-        return hotelRepo.save(hotel);
+    public Hotel getHotel(String hotelId) throws HotelException {
+        return hotelRepo.findById(hotelId).orElseThrow(()->new HotelException("No hotel available by that id"));
+//        return hotelRepo.save(hotel);
     }
 
 

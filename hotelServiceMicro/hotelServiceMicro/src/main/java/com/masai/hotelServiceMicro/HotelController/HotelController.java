@@ -20,9 +20,9 @@ public class HotelController {
         return new ResponseEntity<>(hotelService.addHotel(hotel), HttpStatus.CREATED);
     }
 
-    @GetMapping("/hotell")
-    public ResponseEntity<Hotel> GetHotelByIdHandler(@RequestBody Hotel hotel) throws HotelException {
-        return new ResponseEntity<>(hotelService.getHotel(hotel), HttpStatus.OK);
+    @GetMapping("/hotel/{hotelId}")
+    public ResponseEntity<Hotel> GetHotelByIdHandler(@PathVariable("hotelId")String hotelId) throws HotelException {
+        return new ResponseEntity<>(hotelService.getHotel(hotelId), HttpStatus.OK);
     }
 
     @GetMapping("/hotels")
