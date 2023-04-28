@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../hotelServiceMicro/hotelServiceMicro/hotelServiceMicro.iml" filepath="$PROJECT_DIR$/../hotelServiceMicro/hotelServiceMicro/hotelServiceMicro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ratingServiceMirco/ratingServiceMirco.iml" filepath="$PROJECT_DIR$/../ratingServiceMirco/ratingServiceMirco.iml" />
       <module fileurl="file://$PROJECT_DIR$/userServiceInMicro/userServiceInMicro.iml" filepath="$PROJECT_DIR$/userServiceInMicro/userServiceInMicro.iml" />
     </modules>
   </component>

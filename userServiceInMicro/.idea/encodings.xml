@@ -3,6 +3,8 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/../hotelServiceMicro/hotelServiceMicro/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../hotelServiceMicro/hotelServiceMicro/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../ratingServiceMirco/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../ratingServiceMirco/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/userServiceInMicro/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/userServiceInMicro/src/main/resources" charset="UTF-8" />
   </component>
