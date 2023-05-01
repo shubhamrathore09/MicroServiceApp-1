@@ -8,18 +8,21 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="hotelServiceMicro" />
-        <module name="ratingServiceMirco" />
         <module name="userServiceInMicro" />
+        <module name="ratingServiceMirco" />
+        <module name="ServiceRagistory" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="hotelServiceMicro" target="17" />
       <module name="ratingServiceMirco" target="17" />
+      <module name="ServiceRagistory" target="17" />
       <module name="userServiceInMicro" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ServiceRagistory" options="-parameters" />
       <module name="hotelServiceMicro" options="-parameters" />
       <module name="ratingServiceMirco" options="-parameters" />
       <module name="userServiceInMicro" options="-parameters" />
