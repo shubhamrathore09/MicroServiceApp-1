@@ -21,12 +21,12 @@ public class RatingController {
         return new ResponseEntity<>(ratingService.addRating(rating), HttpStatus.CREATED);
     }
 
-    @GetMapping("/ratingByUser/{userId}")
+    @GetMapping("/rating/user/{userId}")
     public ResponseEntity<List<Rating>> getRatingByUser(@PathVariable("userId") String userId) throws RatingException {
         return new ResponseEntity<>(ratingService.getAllRatingByUserId(userId),HttpStatus.OK);
     }
 
-    @GetMapping("/ratingByHotel/{hotelId}")
+    @GetMapping("/rating/hotel/{hotelId}")
     public ResponseEntity<List<Rating>>getRatingByHotel(@PathVariable("hotelId") String hotelId) throws RatingException {
         return new ResponseEntity<>(ratingService.getAllRatingByHotelId(hotelId),HttpStatus.OK);
     }

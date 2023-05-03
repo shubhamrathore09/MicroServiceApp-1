@@ -1,18 +1,29 @@
 package com.masai.userServiceInMicro.Service;
 
 import com.masai.userServiceInMicro.Exception.UserrNotFound;
+import com.masai.userServiceInMicro.Model.Rating;
 import com.masai.userServiceInMicro.Model.Userr;
 import com.masai.userServiceInMicro.repo.UserrRepo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+
 
 @Service
 public class UserrServiceImpl implements  UserrService{
     @Autowired
     private UserrRepo userrRepo;
+
+    @Autowired
+    private RestTemplate restTemplate;
+
+    private Logger logger= LoggerFactory.getLogger(UserrServiceImpl.class);
 
     @Override
     public Userr SaveUser(Userr userr) {
@@ -32,7 +43,14 @@ public class UserrServiceImpl implements  UserrService{
 
     @Override
     public Userr getUserById(String userId) throws UserrNotFound {
-        return userrRepo.findById(userId).orElseThrow(()->new UserrNotFound("no userr are available by that id"));
+
+        Userr userr= userrRepo.findById(userId).orElseThrow(()->new UserrNotFound("no userr are available by that id"));
+       ArrayList forObject= restTemplate.getForObject("http://localhost:8882/rating/user/"+userId,ArrayList.class);
+
+       logger.info("{} ",forObject);
+       userr.setRatings(forObject);
+       return userr;
+       //8591723283
     }
 
     @Override

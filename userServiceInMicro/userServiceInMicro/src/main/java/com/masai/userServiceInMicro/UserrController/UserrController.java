@@ -7,11 +7,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
 @RestController
 public class UserrController {
+
+    @Autowired
+    private RestTemplate restTemplate;
 
     @Autowired
     private UserrService userrService;
@@ -23,10 +27,14 @@ public class UserrController {
     @PutMapping("/userr")
     public ResponseEntity<Userr>UpdateUserHandler(@RequestBody Userr userr) throws UserrNotFound {
         return new ResponseEntity<>(userrService.updateUserr(userr),HttpStatus.OK);
+
     }
 
     @DeleteMapping("/userr/{userId}")
     public ResponseEntity<String>deleteUserHandler(@PathVariable("userId")String userId) throws UserrNotFound {
+
+
+
         return new ResponseEntity<>(userrService.deleteUser(userId),HttpStatus.OK);
     }
 
